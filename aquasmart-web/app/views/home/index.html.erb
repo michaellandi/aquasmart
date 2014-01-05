@@ -1,0 +1,29 @@
+<div class="row">
+	<div class="columns small-12">
+		<h1>Aquarium Controller</h1>
+	</div>
+	<div class="columns small-12">
+		<%= form_for @setting, :url => { :controller => :home, :action => :update } do |f| %>
+			<fieldset class="panel">
+				<legend>Temperature</legend>
+
+				<div>
+					<%= @temp %>°F
+				</div>
+			</fieldset>
+
+			<fieldset class="panel">
+				<legend>Lighting Control</legend>
+				
+				<div>
+					<%= f.label :color %>
+					<%= f.select :color, @colors %>
+				</div>
+			</fieldset>
+
+			<p>
+				<%= f.submit 'Submit Changes', :class => 'button medium success' %>
+			</p>
+		<% end %>
+	</div>
+</div>
